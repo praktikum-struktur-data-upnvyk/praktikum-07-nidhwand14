@@ -209,7 +209,10 @@ int jumlahDaun(const Node* root) {
     if (root == nullptr) {
         return 0;
     }
-    return 1 + jumlahDaun(root->left) + jumlahDaun(root->right);
+    if (root->left == nullptr && root->right == nullptr ) {
+        return 1;
+    }
+    return jumlahDaun(root->left) + jumlahDaun(root->right);
 }
 
 // =============================================================================
